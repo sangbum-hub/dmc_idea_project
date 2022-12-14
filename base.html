@@ -1,0 +1,46 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주택 가격 머신러닝</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1> 내 집 마련 예측 금액 </h1><br>
+    <div>
+        <a href="/">메인화면 바로가기</a>
+    </div>
+    <!-- 실제 컨텐츠 블록이 치환되는 부분 -->
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+<!-- houseinfo.html  -->
+<!-- base.html에 의 block content 부분이 치환되어 레이아웃이 생성됨. -->
+{% extends "base.html"  %}
+<!-- blcok 
+{% block content %}
+    <form method="GET" action="/calculate">
+        <div>
+            <label for="area"> area </label>
+            <input type="text" name="area">
+        </div>
+        <div>
+            <label for="bedrooms"> bedrooms </label>
+            <input type="text" name="bedrooms">
+        </div>
+        <div>
+            <label for="neighborhood"> neighborhood </label>
+            <input type="text" name="neighborhood">
+        </div>
+        <div>
+            <label for="style"> style </label>
+            <input type="text" name="style">
+        </div>
+        <div class='button'>
+            <button type="submit">제출</button>
+        </div>
+    </form>
+{% endblock %} 
